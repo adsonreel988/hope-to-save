@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope to Save - Donation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .amount-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .amount-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #3498db;
+      border-radius: 8px;
+      background: #ecf6fd;
+      color: #3498db;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .amount-buttons button:hover {
+      background: #3498db;
+      color: white;
+    }
+    .amount-input, .tip-section, .payment-method, .checkbox-section {
+      margin: 20px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    .payment-method label {
+      background: #f7f9fb;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .payment-method img {
+      width: 32px;
+      height: auto;
+    }
+    .checkbox-section label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .checkbox-section input {
+      margin-right: 10px;
+    }
+    .submit-button {
+      width: 100%;
+      padding: 14px;
+      background-color: #27ae60;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #1e8449;
+    }
+    .summary {
+      margin-top: 30px;
+      font-size: 15px;
+      background: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Donate to Hope to Save</h2>
+
+    <div class="amount-buttons">
+      <button onclick="setAmount(5)">$5</button>
+      <button onclick="setAmount(10)">$10</button>
+      <button onclick="setAmount(25)">$25</button>
+      <button onclick="setAmount(50)">$50</button>
+      <button onclick="setAmount(100)">$100</button>
+    </div>
+
+    <div class="amount-input">
+      <label for="amount">Enter your donation</label>
+      <div style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #555;">$</span>
+        <input type="number" id="amount" placeholder="0.00" style="padding-left: 24px;" />
+      </div>
+    </div>
+
+    <div class="tip-section">
+      <label for="tip">Optional tip for platform</label>
+      <div style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #555;">$</span>
+        <input type="number" id="tip" placeholder="0.00" style="padding-left: 24px;" />
+      </div>
+    </div>
+
+    <div class="payment-method">
+      <label><input type="radio" name="payment" checked /> Google Pay</label>
+      <label><input type="radio" name="payment" /> <img src="https://img.icons8.com/ios-filled/50/000000/bank-card-back-side.png" alt="Credit Card" /> Credit or Debit</label>
+      <label><input type="radio" name="payment" /> <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" /> PayPal</label>
+    </div>
+
+    <div class="checkbox-section">
+      <label><input type="checkbox" /> Don’t display my name publicly on the fundraiser.</label>
+      <label><input type="checkbox" checked /> Get occasional updates from Hope to Save.</label>
+    </div>
+
+    <button class="submit-button">Donate Now</button>
+
+    <div class="summary">
+      <p><strong>Your donation:</strong> $0.00</p>
+      <p><strong>Tip:</strong> $0.00</p>
+      <p><strong>Total due today:</strong> $0.00</p>
+    </div>
+  </div>
+
+  <script>
+    function setAmount(value) {
+      document.getElementById('amount').value = value;
+    }
+  </script>
+</body>
+</html>
